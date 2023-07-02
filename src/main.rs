@@ -1,9 +1,27 @@
-use meta::btree::*;
+// use meta::btree::*;
 
-mod meta;
+// mod meta;
+
+use std::env;
 
 fn main() {
-    let a: IntItem = 1;
-    let b: IntItem = 2;
-    println!("{}", a.less(&b));
+    let args: Vec<String> = env::args().collect();
+    let mut server_mode = false;
+
+    for arg in args.iter() {
+        if arg == "-server" {
+            server_mode = true;
+        }
+    }
+
+    // ここからプログラムの処理を実行
+    // ...
+
+    if server_mode {
+        // サーバーモードの処理
+        // ...
+    } else {
+        // サーバーモードでない場合の処理
+        // ...
+    }
 }
